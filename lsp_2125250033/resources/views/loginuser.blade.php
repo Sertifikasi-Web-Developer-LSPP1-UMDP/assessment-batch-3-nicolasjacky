@@ -11,7 +11,7 @@
     <div class="container vh-100 d-flex justify-content-center align-items-center">
         <div class="card shadow p-4 w-50">
             <h3 class="text-center mb-4">Login</h3>
-            <form action="/login-submit" method="POST">
+            <form action="/login-user" method="POST">
                 @csrf
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>

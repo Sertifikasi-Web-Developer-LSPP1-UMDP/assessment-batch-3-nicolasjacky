@@ -32,7 +32,7 @@
                         <a class="nav-link" href="{{ route('daftar') }}">Daftar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('loginuser') }}">Login</a>
+                        <a class="nav-link" href="{{ route('login') }}">Login</a>
                     </li>
                 </ul>
             </div>
@@ -41,7 +41,7 @@
 
 
     <!-- Hero Section -->
-    <header class="masthead bg-primary text-white text-center py-5">
+    <header class="masthead bg-primary text-white text-center py-5 mt-5">
         <div class="container">
             <h1 class="text-uppercase">Pendaftaran Mahasiswa Baru</h1>
             <p class="lead">Silahkan Mendaftar Jadi Mahasiswa Baru!</p>
@@ -59,13 +59,13 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="{{ asset('build/assets/img/about/image.png') }}" width="100%" height="400">
+                        <img src="{{ asset('build/assets/img/about/image.png') }}" width="100%" height="500">
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('build/assets/img/about/kelas-karyawan.jpg') }}" width="100%" height="400">
+                        <img src="{{ asset('build/assets/img/about/kelas-karyawan.jpg') }}" width="100%" height="500">
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('build/assets/img/about/gambar1.jpg') }}" width="100%" height="400">
+                        <img src="{{ asset('build/assets/img/about/gambar1.jpg') }}" width="100%" height="500">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -83,7 +83,7 @@
     <!-- Footer -->
     <footer class="footer bg-dark text-white py-4">
         <div class="container text-center">
-            <p>Copyright &copy; LSP 2023</p>
+            <p>Nicolas Jacky 2125250033 &copy; LSP 2023</p>
             <div>
                 <a class="btn btn-dark btn-social mx-2" href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                 <a class="btn btn-dark btn-social mx-2" href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
