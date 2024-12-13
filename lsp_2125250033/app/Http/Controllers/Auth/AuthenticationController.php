@@ -20,17 +20,29 @@ class AuthenticationController extends Controller
     {
         // Define validation rules
         $rules = [
-            'nama' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users,email',
+            'nama' => 'required|string|max:255|unique:users,nama', // Validasi untuk nama
+            'email' => 'required|string|email|max:255|unique:users,email', // Validasi untuk email
             'password' => 'required|string|min:8|confirmed',
         ];
 
+        // Define custom messages
+        $messages = [
+            'nama.required' => 'Nama wajib diisi.',
+            'nama.unique' => 'Nama sudah digunakan oleh pengguna lain.',
+            'email.required' => 'Email wajib diisi.',
+            'email.email' => 'Format email tidak valid.',
+            'email.unique' => 'Email sudah terdaftar. Silakan gunakan email lain.',
+            'password.required' => 'Password wajib diisi.',
+            'password.min' => 'Password harus terdiri dari minimal 8 karakter.',
+            'password.confirmed' => 'Konfirmasi password tidak cocok.',
+        ];
+
         // Validate the incoming request data
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($request->all(), $rules, $messages);
 
         if ($validator->fails()) {
             return redirect()->back()
-                ->withErrors($validator)
+                ->withErrors($validator) // Hanya mengembalikan pesan kesalahan kustom
                 ->withInput();
         }
 
@@ -41,23 +53,16 @@ class AuthenticationController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        // Login the user after registration
-        // auth()->login($user);
+        // Set a success message in the session
+        session()->flash('success', 'Pendaftaran berhasil! Silakan login.');
 
-
-        // Redirect to welcome page
+        // Redirect to login page
         return redirect()->route('login');
     }
 
-
-    /**
-     * Log in a user.
-     */
-
-
     public function login(Request $request)
     {
-        // Validate the request data
+        // Validasi data permintaan
         $rules = [
             'email' => 'required|string|email|max:255',
             'password' => 'required|string|min:5',
@@ -65,98 +70,50 @@ class AuthenticationController extends Controller
 
         $validator = Validator::make($request->all(), $rules);
 
-        // Check if validation fails
+        // Cek jika validasi gagal
         if ($validator->fails()) {
-            return response()->json(['status' => false, 'message' => $validator->errors()->first()], 422);
+            return redirect()->back()
+                ->withErrors($validator) // Mengembalikan pesan kesalahan
+                ->withInput(); // Mengembalikan input sebelumnya
         }
 
-        // Check if the user exists
+        // Mencari pengguna berdasarkan email
         $user = User::where('email', $request->email)->first();
 
+        // Cek jika pengguna tidak ditemukan
         if (!$user) {
-            return response()->json(['status' => false, 'message' => 'User  not found!'], 404);
+            session()->flash('error', 'User tidak ditemukan!');
+            return redirect()->back()->withInput();
         }
 
-        // Check if the password is correct
-        if (!Hash::check($request->password, $user->password)) {
-            return response()->json(['status' => false, 'message' => 'Password Salah!'], 401);
-        }
+        // Cek kredensial pengguna
+        if (Hash::check($request->password, $user->password)) {
+            // Login pengguna
+            Auth::login($user);
 
-        // Check if the user is verified
-        if ($user->role == 'mahasiswa' && !$user->verified) {
-            return response()->json([
-                'status' => false,
-                'message' => 'Akun anda belum diverifikasi!'
-            ]);
-        }
+            // Menghasilkan token
+            $token = $user->createToken('YourAppName')->plainTextToken;
 
-        // Generate the authentication token
-        $token = $user->createToken('auth_token')->plainTextToken;
+            // Set token ke session atau cookie jika diperlukan
+            session(['token' => $token]);
 
+            // Set pesan sukses di session
+            // session()->flash('success', 'Login berhasil! Selamat datang, ' . $user->nama . '.');
 
-        Auth::login($user);
-        // Check the user role
-        if ($user->role == 'admin') {
-            return redirect()->route('admin');
-        } elseif ($user->role == 'mahasiswa') {
-            return redirect()->route('status-pendaftaran', ['userId' => $user->id]);
+            // Redirect berdasarkan peran pengguna
+            if ($user->role == 'admin') {
+                return redirect()->route('admin'); // Redirect ke halaman admin
+            } elseif ($user->role == 'mahasiswa') {
+                return redirect()->route('status-pendaftaran', ['userId' => $user->id]); // Redirect ke halaman mahasiswa
+            } else {
+                return redirect()->route('login'); // Redirect ke halaman login jika peran tidak dikenali
+            }
         } else {
-            return redirect()->route('login');
-        }
-
-    }
-
-
-    public function deleteUser($id)
-    {
-        $user = User::find($id);
-
-        if (!$user) {
-            return response()->json([
-                'status' => false,
-                'message' => 'User tidak ditemukan!',
-            ]);
-        }
-
-        try {
-            $user->delete();
-
-            return response()->json([
-                'status' => true,
-                'message' => 'User berhasil dihapus!',
-            ]);
-        } catch (\Exception $e) {
-            return response()->json([
-                'status' => false,
-                'message' => 'Gagal menghapus user! ' . $e->getMessage(),
-            ]);
+            // Jika password salah
+            session()->flash('error', 'Password salah!');
+            return redirect()->back()->withInput();
         }
     }
 
-    public function restoreUser($id)
-    {
-        $user = User::withTrashed()->find($id);
-
-        if (!$user) {
-            return response()->json([
-                'status' => false,
-                'message' => 'User tidak ditemukan!',
-            ]);
-        }
-
-        try {
-            $user->restore();
-
-            return response()->json([
-                'status' => true,
-                'message' => 'User berhasil dikembalikan!',
-            ]);
-        } catch (\Exception $e) {
-            return response()->json([
-                'status' => false,
-                'message' => 'Gagal mengembalikan user! ' . $e->getMessage(),
-            ]);
-        }
-    }
 
 }

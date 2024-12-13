@@ -38,6 +38,17 @@ class DaftarController extends Controller
         // Ambil semua informasi
         $informasi = Informasi::all();
 
+        // Cek apakah pengguna yang sedang login adalah pengguna yang diminta
+        $user = Auth::user();
+        if ($user->id !== (int)$userId) {
+            return abort(403, 'Unauthorized access.');
+        }
+
+        // Cek apakah akun pengguna telah diverifikasi
+        if (!$user->verified) { // Asumsikan ada kolom is_verified di tabel users
+            return view('loginuser', ['error' => 'Akun Anda belum diverifikasi.']);
+        }
+
         if ($daftar) {
             $status_pendaftaran = $daftar->status_pendaftaran;
             // Kembalikan status pendaftaran ke view

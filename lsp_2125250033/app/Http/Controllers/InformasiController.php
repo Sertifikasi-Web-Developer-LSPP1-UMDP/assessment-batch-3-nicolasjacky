@@ -29,7 +29,7 @@ class InformasiController extends Controller
          $informasi->judul = $request->judul;
          $informasi->isi = $request->isi;
          $informasi->save();
-         return redirect()->back()->with('success', 'Informasi telah disimpan!');
+         return redirect()->back()->with('success', 'Informasi Berhasil Disimpan!');
      }
 
      public function editInformasi($id)
@@ -49,7 +49,7 @@ class InformasiController extends Controller
          $informasi->judul = $request->input('judul');
          $informasi->isi = $request->input('isi');
          $informasi->save();
-         return redirect()->route('admin')->with('success', 'Informasi berhasil diupdate');
+         return redirect()->route('admin.informasi')->with('success', 'Informasi Berhasil Di-Update');
      }
 
      public function hapusInformasi($id)
@@ -57,9 +57,9 @@ class InformasiController extends Controller
          try {
              $informasi = Informasi::find($id);
              $informasi->delete();
-             return redirect()->back()->with('success', 'Informasi telah dihapus!');
+             return redirect()->back()->with('success', 'Informasi Berhasil Dihapus!');
          } catch (\Exception $e) {
-             return redirect()->back()->with('error', 'Gagal menghapus informasi!');
+             return redirect()->back()->with('error', 'Gagal Menghapus Informasi!');
          }
      }
 

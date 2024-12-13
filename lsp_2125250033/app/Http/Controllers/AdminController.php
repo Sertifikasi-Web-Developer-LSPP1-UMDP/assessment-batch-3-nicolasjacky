@@ -61,5 +61,23 @@ class AdminController extends Controller
         return redirect()->back()->with('success', 'Pendaftaran masih diproses!');
     }
 
+    public function showUsers()
+    {
+        $users = User::where('role', 'mahasiswa')->get(); // Ambil semua user dengan role 'mahasiswa'
+        return view('adminuser', compact('users'));
+    }
+
+    public function showFormulirs()
+    {
+        $formulirs = Daftar::all(); // Ambil semua formulir
+        return view('adminformulir', compact('formulirs'));
+    }
+
+    public function showInformasi()
+    {
+        $informasis = Informasi::all(); // Ambil semua informasi
+        return view('admininformasi', compact('informasis'));
+    }
+
 }
 

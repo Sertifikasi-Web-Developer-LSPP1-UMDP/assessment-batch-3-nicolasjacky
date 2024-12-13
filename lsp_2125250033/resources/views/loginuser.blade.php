@@ -11,6 +11,23 @@
     <div class="container vh-100 d-flex justify-content-center align-items-center">
         <div class="card shadow p-4 w-50">
             <h3 class="text-center mb-4">Login</h3>
+
+            <!-- Pesan Sukses -->
+            @if(session('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+
+            <!-- Pesan Kesalahan -->
+            @if(isset($error))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ $error }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+
             <form action="/login-user" method="POST">
                 @csrf
                 <div class="mb-3">
@@ -23,6 +40,10 @@
                 </div>
                 <button type="submit" class="btn btn-primary w-100">Login</button>
             </form>
+
+            <div class="mt-3 text-center">
+                <p>Belum punya akun? <a href="/daftar" class="link-primary">Daftar di sini</a></p>
+            </div>
         </div>
     </div>
 

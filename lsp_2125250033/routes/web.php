@@ -23,8 +23,8 @@ Route::get('/daftarformulir', function () {
 // Route yang memerlukan autentikasi
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin');
-    Route::put('/verifikasi/{id}', [AdminController::class, 'verifikasi'])->name('verifikasi');
-    Route::put('/batalkan-verifikasi/{id}', [AdminController::class, 'batalkanVerifikasi'])->name('batalkan-verifikasi');
+    Route::post('/verifikasi/{id}', [AdminController::class, 'verifikasi'])->name('verifikasi');
+    Route::post('/batalkan-verifikasi/{id}', [AdminController::class, 'batalkanVerifikasi'])->name('batalkan-verifikasi');
     Route::post('/simpan-informasi', [InformasiController::class, 'simpanInformasi'])->name('simpan-informasi');
     Route::get('/edit-informasi/{id}', [InformasiController::class, 'editInformasi'])->name('edit-informasi');
     Route::put('/update-informasi/{id}', [InformasiController::class, 'update'])->name('update-informasi');
@@ -38,6 +38,10 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::post('/daftar-formulir', [DaftarController::class, 'store']);
+
+    Route::get('/admin/user', [AdminController::class, 'showUsers'])->name('admin.user');
+    Route::get('/admin/formulir', [AdminController::class, 'showFormulirs'])->name('admin.formulir');
+    Route::get('/admin/informasi', [AdminController::class, 'showInformasi'])->name('admin.informasi');
 });
 
 
