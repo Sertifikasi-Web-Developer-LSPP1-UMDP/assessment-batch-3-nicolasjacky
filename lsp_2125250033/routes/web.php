@@ -21,7 +21,7 @@ Route::get('/daftarformulir', function () {
 })->name('formulir');
 
 // Route yang memerlukan autentikasi
-Route::middleware('auth:sanctum')->group(function () {
+Route::middleware('auth')->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin');
     Route::post('/verifikasi/{id}', [AdminController::class, 'verifikasi'])->name('verifikasi');
     Route::post('/batalkan-verifikasi/{id}', [AdminController::class, 'batalkanVerifikasi'])->name('batalkan-verifikasi');
@@ -49,4 +49,4 @@ Route::post('/submit-daftar', [AuthenticationController::class, 'register']);
 Route::post('/login-user', [AuthenticationController::class, 'login']);
 
 
-// require __DIR__.'/auth.php';
+require __DIR__.'/auth.php';
