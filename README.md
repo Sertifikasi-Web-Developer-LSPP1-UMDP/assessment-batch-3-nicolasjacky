@@ -74,7 +74,7 @@ laravel: Versi 11.35.0
 ## Dokumentasi gambar
 
 ### Halaman Utama
-![Halaman Utama](C:\Users\Asus\assessment-batch-3-nicolasjacky/halaman utama.png)
+![Halaman Utama](halamanutama.png)
 
 ### Halaman Pendaftaran
 ![Halaman Pendaftaran](screenshots/registration.png)
