@@ -69,3 +69,18 @@ laravel: Versi 11.35.0
 - `/simpan-informasi`: Admin dapat menambah informasi baru.
 - `/edit-informasi/{id}`: Admin dapat mengedit informasi tertentu.
 - `/hapus-informasi/{id}`: Admin dapat menghapus informasi tertentu.
+
+
+## Dokumentasi gambar
+
+### Halaman Utama
+![Halaman Utama](C:\Users\Asus\assessment-batch-3-nicolasjacky/halaman utama.png)
+
+### Halaman Pendaftaran
+![Halaman Pendaftaran](screenshots/registration.png)
+
+### Halaman Login
+![Halaman Login](screenshots/login.png)
+
+### Dashboard Admin
+![Dashboard Admin](screenshots/admin-dashboard.png)

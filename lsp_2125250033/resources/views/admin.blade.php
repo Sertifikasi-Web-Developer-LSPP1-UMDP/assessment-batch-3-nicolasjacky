@@ -30,7 +30,7 @@
     </nav>
 
     <div class="container py-5">
-        <h1 class="text-center mb-4">Halaman Admin</h1>
+        <h1 class="text-center mb-4">Halaman @if (Auth::user()->role == 'admin') Admin @else Dashboard @endif</h1>
         <div class="card text-center shadow-sm">
             <div class="card-header bg-info text-white fs-6">
                 Selamat Datang di Panel Admin!

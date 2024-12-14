@@ -76,6 +76,34 @@
         </div>
     </section>
 
+    <!-- Informasi Section -->
+    <section id="informasi" class="page-section py-5 bg-light">
+        <div class="container">
+            <h2 class="text-uppercase text-center mb-4">Informasi Terbaru</h2>
+            <div class="row">
+                @foreach ($informasi as $info)
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <!-- Jika foto ada, tampilkan -->
+                            @if($info->foto)
+                                <img src="{{ asset('uploads/' . $info->foto) }}" class="card-img-top" alt="{{ $info->judul }}">
+                            @else
+                                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Default Image">
+                            @endif
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $info->judul }}</h5>
+                                <p class="card-text">{{ Str::limit($info->isi, 100) }}</p>
+                            </div>
+                            <div class="card-footer text-center">
+                                <small class="text-muted">Diterbitkan {{ $info->created_at->format('d M Y') }}</small>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer bg-dark text-white py-4">
         <div class="container text-center">

@@ -35,11 +35,16 @@
         <h2 class="text-center mt-5">Informasi Terbaru</h2>
         <div class="row d-flex justify-content-center">
             @foreach($informasi as $info)
-                <div class="col-md-12">
+                <div class="col-md-12 mb-3">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title text-center">{{ $info->judul }}</h5>
                             <p class="card-text text-center">{{ $info->isi }}</p>
+                            @if($info->foto)
+                                <img src="{{ asset('uploads/' . $info->foto) }}" alt="Foto" class="img-fluid mx-auto d-block" style="max-width: 100%; height: auto;">
+                            @else
+                                <span class="text-center d-block">Tidak ada foto</span>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -76,14 +81,14 @@
                         <option value="Buddha">Buddha</option>
                         <option value="Hindu">Hindu</option>
                         <option value="Katolik">Katolik</option>
-                            <option value="Kristen">Kristen</option>
-                            <option value="Konghucu">Konghucu</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Daftar</button>
-                </form>
-            @endif
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
+                        <option value="Kristen">Kristen</option>
+                        <option value="Konghucu">Konghucu</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Daftar</button>
+            </form>
+        @endif
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Daftar;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Informasi;
 use Illuminate\Http\Request;
 
@@ -14,6 +15,8 @@ class AdminController extends Controller
 
     public function index()
     {
+        if (Auth::user()->role != 'admin') return abort(403);
+        
         $users = User::where('role', 'mahasiswa')->get();
         $formulirs = Daftar::all();
         $informasis = Informasi::all();
@@ -63,18 +66,22 @@ class AdminController extends Controller
 
     public function showUsers()
     {
+        if (Auth::user()->role != 'admin') return abort(403);
+
         $users = User::where('role', 'mahasiswa')->get(); // Ambil semua user dengan role 'mahasiswa'
         return view('adminuser', compact('users'));
     }
 
     public function showFormulirs()
     {
+        if (Auth::user()->role != 'admin') return abort(403);
         $formulirs = Daftar::all(); // Ambil semua formulir
         return view('adminformulir', compact('formulirs'));
     }
 
     public function showInformasi()
     {
+        if (Auth::user()->role != 'admin') return abort(403);
         $informasis = Informasi::all(); // Ambil semua informasi
         return view('admininformasi', compact('informasis'));
     }
