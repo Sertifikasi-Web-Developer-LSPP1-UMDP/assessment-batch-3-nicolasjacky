@@ -81,6 +81,7 @@ laravel: Versi 11.35.0
 
 ### Halaman Utama
 <img width="956" alt="halamanutama" src="https://github.com/user-attachments/assets/b8298c59-7a8e-489b-9252-c61a8df76d1c" />
+<img width="944" alt="halamanutama2" src="https://github.com/user-attachments/assets/3e3f59a5-e3c9-48ca-9eb7-cff045d6aca2" />
 
 ### Halaman Pendaftaran
 <img width="958" alt="halamanregister" src="https://github.com/user-attachments/assets/f8bc3f43-4c3f-4733-80d6-beccec092201" />
@@ -89,7 +90,8 @@ laravel: Versi 11.35.0
 <img width="959" alt="halamanlogin" src="https://github.com/user-attachments/assets/504b3247-3cdc-4c79-bac3-a9dea2ef1917" />
 
 ### Halaman Mahasiswa 
-<img width="932" alt="halamanmahasiswa" src="https://github.com/user-attachments/assets/83b0d9c5-3a7c-4efb-9049-7b5667b8aa0e" />
+<img width="950" alt="halamanmahasiswa" src="https://github.com/user-attachments/assets/3684dfa1-9add-4589-8a9f-d8ff6d2025e7" />
+
 <img width="931" alt="halamanmahasiswa2" src="https://github.com/user-attachments/assets/d2dab128-a4dc-4c05-8e6e-195e311b8ce0" />
 
 ### Dashboard Admin Bagian User Mahasiswa
@@ -99,4 +101,5 @@ laravel: Versi 11.35.0
 <img width="955" alt="adminformulir" src="https://github.com/user-attachments/assets/dbb4ab7a-1d2c-475a-bb3d-e3e0e78bb689" />
 
 ### Dashboard Admin Bagian Informasi
-<img width="904" alt="admininformasi" src="https://github.com/user-attachments/assets/4a2397b3-4afe-4d55-b44b-300dadf59c15" />
+<img width="806" alt="admininformasi" src="https://github.com/user-attachments/assets/a7a17a5f-e1f8-4a81-9171-5f3d41ba2430" />
+
