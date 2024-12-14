@@ -74,13 +74,24 @@ laravel: Versi 11.35.0
 ## Dokumentasi gambar
 
 ### Halaman Utama
-![Halaman Utama](https://raw.githubusercontent.com/Sertifikasi-Web-Developer-LSPP1-UMDP/assessment-batch-3-nicolasjacky/refs/heads/main/lsp_2125250033/halamanutama.png?token=GHSAT0AAAAAAC32QRDLN5CKZTUKYYW5IOCSZ25CNJA)
+<img width="956" alt="halamanutama" src="https://github.com/user-attachments/assets/b8298c59-7a8e-489b-9252-c61a8df76d1c" />
+
 
 ### Halaman Pendaftaran
-![Halaman Pendaftaran](screenshots/registration.png)
+<img width="958" alt="halamanregister" src="https://github.com/user-attachments/assets/f8bc3f43-4c3f-4733-80d6-beccec092201" />
 
 ### Halaman Login
-![Halaman Login](screenshots/login.png)
+<img width="959" alt="halamanlogin" src="https://github.com/user-attachments/assets/504b3247-3cdc-4c79-bac3-a9dea2ef1917" />
 
-### Dashboard Admin
+### Halaman Mahasiswa 
+<img width="932" alt="halamanmahasiswa" src="https://github.com/user-attachments/assets/83b0d9c5-3a7c-4efb-9049-7b5667b8aa0e" />
+<img width="931" alt="halamanmahasiswa2" src="https://github.com/user-attachments/assets/d2dab128-a4dc-4c05-8e6e-195e311b8ce0" />
+
+### Dashboard Admin Bagian User Mahasiswa
 ![Dashboard Admin](screenshots/admin-dashboard.png)
+
+### Dashboard Admin Bagian Formulir
+<img width="955" alt="adminformulir" src="https://github.com/user-attachments/assets/dbb4ab7a-1d2c-475a-bb3d-e3e0e78bb689" />
+
+### Dashboard Admin Bagian Informasi
+<img width="904" alt="admininformasi" src="https://github.com/user-attachments/assets/4a2397b3-4afe-4d55-b44b-300dadf59c15" />
