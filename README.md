@@ -73,9 +73,14 @@ laravel: Versi 11.35.0
 
 ## Dokumentasi gambar
 
+### Use case
+![usecasediagram](https://github.com/user-attachments/assets/c334eeec-1b50-4b16-8754-9467e0addc7a)
+
+### tabel
+<img width="537" alt="tabel" src="https://github.com/user-attachments/assets/552a6cac-9aa9-4cf7-8acb-b83732bfb224" />
+
 ### Halaman Utama
 <img width="956" alt="halamanutama" src="https://github.com/user-attachments/assets/b8298c59-7a8e-489b-9252-c61a8df76d1c" />
-
 
 ### Halaman Pendaftaran
 <img width="958" alt="halamanregister" src="https://github.com/user-attachments/assets/f8bc3f43-4c3f-4733-80d6-beccec092201" />
