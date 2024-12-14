@@ -35,7 +35,7 @@
         <h2 class="text-center mt-5">Informasi Terbaru</h2>
         <div class="row d-flex justify-content-center">
             @foreach($informasi as $info)
-                <div class="col-md-12 mb-3">
+                <div class="col-md-8 mb-3">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title text-center">{{ $info->judul }}</h5>
