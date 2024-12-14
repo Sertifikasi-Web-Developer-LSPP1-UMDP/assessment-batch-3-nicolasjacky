@@ -88,7 +88,7 @@ laravel: Versi 11.35.0
 <img width="931" alt="halamanmahasiswa2" src="https://github.com/user-attachments/assets/d2dab128-a4dc-4c05-8e6e-195e311b8ce0" />
 
 ### Dashboard Admin Bagian User Mahasiswa
-![Dashboard Admin](screenshots/admin-dashboard.png)
+<img width="937" alt="adminuser" src="https://github.com/user-attachments/assets/7b02f0b0-0a46-45bc-9d4c-468bc0c58cfb" />
 
 ### Dashboard Admin Bagian Formulir
 <img width="955" alt="adminformulir" src="https://github.com/user-attachments/assets/dbb4ab7a-1d2c-475a-bb3d-e3e0e78bb689" />
