@@ -74,7 +74,7 @@ laravel: Versi 11.35.0
 ## Dokumentasi gambar
 
 ### Halaman Utama
-![Halaman Utama](halamanutama.png)
+![Halaman Utama](https://raw.githubusercontent.com/Sertifikasi-Web-Developer-LSPP1-UMDP/assessment-batch-3-nicolasjacky/refs/heads/main/lsp_2125250033/halamanutama.png?token=GHSAT0AAAAAAC32QRDLN5CKZTUKYYW5IOCSZ25CNJA)
 
 ### Halaman Pendaftaran
 ![Halaman Pendaftaran](screenshots/registration.png)
